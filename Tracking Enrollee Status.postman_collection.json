@@ -1,0 +1,237 @@
+{
+	"info": {
+		"_postman_id": "38ac4a41-394a-481c-b412-a6d6754146c5",
+		"name": "Tracking Enrollee Status",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add a new enrollee",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Mike Hurly\",\r\n    \"activationStatus\": true,\r\n    \"dateOfBirth\": \"1983-10-30\",\r\n    \"phoneNumber\": \"2355543333\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/enrollee/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"enrollee",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modify an existing enrollee",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"Peter James\",\r\n    \"activationStatus\": false,\r\n    \"dateOfBirth\": \"1983-11-28\",\r\n    \"phoneNumber\": \"9999999999\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/enrollee/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"enrollee",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove an enrollee entirely",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/enrollee/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"enrollee",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Enrolle by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/enrollee/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"enrollee",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List all enrollees",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/enrollee/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"enrollee",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add dependents to an enrollee",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"dependent 3\",\r\n    \"dateOfBirth\": \"1985-08-12\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/enrollee/1/dependent/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"enrollee",
+						"1",
+						"dependent",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modify existing dependents",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 5,\r\n    \"name\": \"dependent 1\",\r\n    \"dateOfBirth\": \"1985-08-10\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/enrollee/1/dependent/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"enrollee",
+						"1",
+						"dependent",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove dependents from an enrollee",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/enrollee/dependent/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"enrollee",
+						"dependent",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List all dependents to an enrollee",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/enrollee/1/dependent/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"enrollee",
+						"1",
+						"dependent",
+						"list"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
